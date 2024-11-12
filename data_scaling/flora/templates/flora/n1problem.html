@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}N1-problem{% endblock %}
+
+{% load static %}
+{% comment %} {% block styles %}
+    <link rel="stylesheet" href="{% static '' %}">
+{% endblock %} {% endcomment %}
+
+{% block content %}
+    <h1>N1-problem</h1>
+    {% for plant in plants %}
+    <p>Name plant: {{ plant.name }}</p>
+    <p>Name discoverer: {{ plant.discoverer.first_name }}</p>
+    {% endfor %}
+{% endblock %}
