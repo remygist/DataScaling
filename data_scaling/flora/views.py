@@ -11,3 +11,10 @@ def n1problem(request):
         "plants": plants
     }
     return render(request, "flora/n1problem.html", context)
+
+def n1solution(request):
+    plants = Plant.objects.select_related('discoverer').all()
+    context = {
+        "plants": plants
+    }
+    return render(request, "flora/n1solution.html", context)
