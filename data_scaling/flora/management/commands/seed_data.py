@@ -8,7 +8,7 @@ import random
 class Command(BaseCommand):
     def handle(self, *args, **kwargs):
         fake = Faker()
-        amount = 100
+        amount = 10000
         discoverers = []
 
         for _ in range(amount):

@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import JsonResponse
 from django.core.paginator import Paginator
+from django.core.cache import cache
 from .models import Plant, Discoverer
 
 
@@ -9,11 +10,26 @@ def index(request):
     return render(request, "flora/index.html")
 
 def n1problem(request):
-    plants = Plant.objects.all()
+    # Try to get the cached data
+    plants = cache.get('all_plants')
+
+    if not plants:
+        # If cache is empty, perform the query
+        plants = Plant.objects.all()  # Query to fetch the plants
+
+        # Cache the result for 15 minutes (900 seconds)
+        cache.set('all_plants', plants, timeout=900)
+        
+        print("Cache MISS - Data has been cached.")  # For debugging purposes
+
+    else:
+        print("Cache HIT - Data retrieved from cache.")  # For debugging purposes
+
     context = {
         "plants": plants
     }
     return render(request, "flora/n1problem.html", context)
+
 
 def n1solution(request):
     plants = Plant.objects.select_related('discoverer').all()

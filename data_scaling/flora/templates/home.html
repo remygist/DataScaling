@@ -8,4 +8,8 @@
 
 {% block content %}
     <h1>Welcome to data scaling</h1>
+    <h2><a href="{% url 'flora:n1problem' %}" class="btn">N+1 problem example</a></h2>
+    <h2><a href="{% url 'flora:n1solution' %}" class="btn">N+1 solution example</a></h2>
+    <h2><a href="{% url 'flora:pagination' %}" class="btn">Pagination display</a></h2>
+    <h2><a href="{% url 'flora:infinite_scroll' %}" class="btn">Endless scroll display</a></h2>
 {% endblock %}
