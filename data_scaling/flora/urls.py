@@ -9,4 +9,5 @@ urlpatterns = [
     path("pagination",views.pagination, name="pagination"),
     path("infinite-scroll/", views.infinite_scroll_view, name="infinite_scroll"),
     path("infinite-scroll-data/", views.infinite_scroll_plants, name="infinite_scroll_data"),
+    path('search-plants/', views.search_plants, name='search-plants'),
 ]
