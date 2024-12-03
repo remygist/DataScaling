@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block title %}N1-solution{% endblock %}
+
+{% load static %}
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'flora/n1solution.css' %}">
+{% endblock %} 
+
+{% block content %}
+    <h1>N1-solution</h1>
+
+    <input type="text" id="searchInput" placeholder="Search plants..." onkeyup="searchPlants()">
+
+    <div id="loader" style="display: none;">Loading...</div>
+
+    <table>
+        <tr>
+            <th>Plant</th>
+            <th>Discoverer</th>
+        </tr>
+        <tbody id="plantTableBody">
+            {% for plant in plants %}
+                <tr>
+                    <td>{{ plant.name }}</td>
+                    <td>{{ plant.discoverer.first_name }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
+
+{% block scripts %}
+ <script src="{% static 'flora/search.js'%}"></script>
+{%endblock%}

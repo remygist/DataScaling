@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}N1-problem{% endblock %}
+
+{% load static %}
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'flora/n1problem.css' %}">
+{% endblock %}
+
+{% block content %}
+    <h1>Infinite scroll</h1>
+    <table id="plant-table">
+        <tr>
+            <th>Plant</th>
+            <th>Discoverer</th>
+        </tr>
+    </table>
+
+    <div id="loading-message" style="display: none;">Loading more plants...</div>
+{% endblock %}
+
+{% block scripts %}
+ <script src="{% static 'flora/infinite_scroll.js'%}"></script>
+{%endblock%}

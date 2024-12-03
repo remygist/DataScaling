@@ -1,0 +1,93 @@
+/* General Page Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    color: #333;
+    font-size: 24px;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+table th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+table tr:hover {
+    background-color: #ddd;
+}
+
+table td {
+    color: #555;
+}
+
+/* Pagination Controls */
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    padding: 10px 0;
+    color: #333;
+}
+
+.pagination span {
+    font-size: 14px;
+}
+
+.pagination div {
+    display: flex;
+    gap: 5px;
+}
+
+.pagination a, .pagination strong {
+    padding: 5px 10px;
+    text-decoration: none;
+    color: #4CAF50;
+    border: 1px solid #4CAF50;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.pagination a:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.pagination strong {
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+    cursor: default;
+}
+
+.pagination a:first-child,
+.pagination a:last-child {
+    font-weight: bold;
+}
+
+.pagination a[aria-disabled="true"],
+.pagination strong[aria-disabled="true"] {
+    color: #bbb;
+    border-color: #bbb;
+    cursor: not-allowed;
+}
